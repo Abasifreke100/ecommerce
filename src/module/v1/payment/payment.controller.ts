@@ -48,7 +48,7 @@ export class PaymentController {
       // Check the response to verify the payment was successful
       if (executePayment.state === 'approved') {
         // Payment was successful, you can perform further actions here
-        return res.send('Payment was successful.');
+        return res.send(executePayment);
       } else {
         return res.send('Payment failed.');
       }
@@ -59,6 +59,7 @@ export class PaymentController {
     }
   }
 
+  @Public()
   @Get('cancel')
   async handleCancel() {
     return 'payment cancelled!!';
