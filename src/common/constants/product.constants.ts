@@ -10,6 +10,11 @@ export const CREATE_ORDER = 'Order created successfully';
 
 export const QUANTITY_UPDATED = 'Quantity updated successfully';
 
+// video
+export const VIDEO_DELETED = 'Video deleted successfully';
+export const VIDEO_CREATED = 'Video created successfully';
+export const VIDEO_UPDATED = 'Video updated successfully';
+
 export enum CategoryEnum {
   MEN = 'Men',
   WOMEN = 'Women',

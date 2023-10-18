@@ -15,6 +15,7 @@ import { ProductModule } from './module/v1/product/product.module';
 import { CartModule } from './module/v1/cart/cart.module';
 import { PaymentModule } from './module/v1/payment/payment.module';
 import { OrderModule } from './module/v1/order/order.module';
+import { VideoModule } from './module/v1/video/video.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { OrderModule } from './module/v1/order/order.module';
     CartModule,
     PaymentModule,
     OrderModule,
+    VideoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
