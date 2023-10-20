@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   Body,
   Controller,
   Get,
@@ -8,11 +7,7 @@ import {
   Post,
   Query,
   Request,
-  Res,
-  UploadedFile,
-  UploadedFiles,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guard/jwt.guard';
 import { RolesGuard } from '../auth/guard/roles.guard';
@@ -29,11 +24,6 @@ import {
 } from '../../../common/constants/user.constants';
 import { ResponseMessage } from '../../../common/decorator/response.decorator';
 import { Roles } from '../../../common/decorator/roles.decorator';
-import { FileInterceptor } from '@nestjs/platform-express';
-import {
-  ILoggedInUser,
-  LoggedInUser,
-} from '../../../common/decorator/user.decorator';
 import { Public } from '../../../common/decorator/public.decorator';
 
 @Controller('user')
@@ -107,4 +97,5 @@ export class UserController {
   async updateSpecific(@Body() updateUserDto: UpdateUserDto, @Request() req) {
     return await this.userService.update(updateUserDto._id, updateUserDto);
   }
+
 }

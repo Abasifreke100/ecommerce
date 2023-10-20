@@ -14,6 +14,7 @@ import {
 import { ProductService } from './product.service';
 import { ResponseMessage } from '../../../common/decorator/response.decorator';
 import {
+  DATA_FETCH,
   PRODUCT_CREATED,
   PRODUCT_DELETED,
   PRODUCT_UPDATED,
@@ -67,5 +68,12 @@ export class ProductController {
     @UploadedFiles() images: Array<Express.Multer.File>,
   ) {
     return await this.productService.update(id, requestData, images);
+  }
+
+  @Public()
+  @ResponseMessage(DATA_FETCH)
+  @Get('product/test')
+  async testMethod() {
+    return 'Nothing happens here';
   }
 }
